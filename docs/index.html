@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rohit Kalpande | GIS Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+      .bg-map-pattern {
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232c3e50' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+      }
+      .experience-item,
+      .project-item,
+      .skill-item {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .experience-item:hover,
+      .project-item:hover,
+      .skill-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: #3b82f6;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      @keyframes orbit-slow {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .animate-orbit-slow {
+        animation: orbit-slow 10s linear infinite;
+        transform-origin: center center;
+      }
+    </style>
+  </head>
+  <body class="bg-map-pattern min-h-screen font-sans text-gray-800">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+      <div
+        class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center"
+      >
+        <div class="flex items-center mb-4 md:mb-0">
+          <div
+            class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-3"
+          >
+            RK
+          </div>
+          <h1 class="text-2xl font-bold text-blue-600">Rohit Kalpande</h1>
+        </div>
+        <nav class="flex flex-wrap justify-center space-x-1 md:space-x-6">
+          <a
+            href="#about"
+            class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600"
+            >About</a
+          >
+          <a
+            href="#experience"
+            class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600"
+            >Experience</a
+          >
+          <a
+            href="#projects"
+            class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600"
+            >Projects</a
+          >
+          <a
+            href="#skills"
+            class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600"
+            >Skills</a
+          >
+          <!-- <a
+            href="#education"
+            class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600"
+            >Education</a
+          > -->
+          <a
+            href="#contact"
+            class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600"
+            >Contact</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+      <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between-space-around">
+        
+        <!-- Intro Text (Left) -->
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
+            Hi, I'm <span class="text-blue-600">Rohit Kalpande</span>
+          </h1>
+          <h2 class="text-2xl md:text-3xl font-medium mb-6 text-gray-600">
+            GIS Developer & Spatial Analyst
+          </h2>
+          <p class="text-lg text-gray-600 mb-8">
+            Results-driven geospatial professional creating scalable solutions
+            that drive actionable insights
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="#contact"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 shadow-lg hover:shadow-xl"
+            >
+              Get In Touch
+            </a>
+            <a
+              href="#projects"
+              class="bg-white hover:bg-gray-100 text-blue-600 font-medium py-3 px-6 rounded-lg border border-blue-600 transition duration-300 shadow-lg hover:shadow-xl"
+            >
+              View Projects
+            </a>
+          </div>
+        </div>
+    
+        <!-- Globe Animation with Satellite Orbit (Right) -->
+        <div class="md:w-1/2 relative w-64 h-64 md:w-80 md:h-80 flex justify-between-space-around items-center">
+          
+          <!-- Animated Rings -->
+          <div class="absolute inset-0 rounded-full bg-blue-500 opacity-10 animate-ping"></div>
+          <div class="absolute inset-4 rounded-full bg-blue-400 opacity-20"></div>
+          <div class="absolute inset-8 rounded-full bg-blue-300 opacity-30 blur-sm"></div>
+    
+          <!-- Central Globe -->
+          <div class="absolute inset-12 bg-white rounded-full shadow-2xl flex items-center justify-center z-10">
+            <div class="text-6xl text-blue-600">
+              <i class="fas fa-globe-asia"></i>
+            </div>
+          </div>
+    
+          <!-- Orbiting Satellite -->
+          <div class="absolute w-full h-full animate-orbit-slow pointer-events-none">
+            <div class="absolute left-0 top-1/2 transform -translate-y-1/2">
+              <!-- <i class="fa-solid fa-satellite fa-flip"></i> -->
+              <i class="fas fa-satellite text-gray-800 text-2xl md:text-3xl"></i>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+        
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          About Me
+        </h2>
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0">
+            <div class="bg-blue-50 p-8 rounded-xl shadow-lg">
+              <h3 class="text-2xl font-bold mb-4 text-blue-600">
+                Professional Summary
+              </h3>
+              <p class="text-gray-700 mb-6">
+                Results-driven GIS developer with expertise in geospatial
+                application development, database management, and automation.
+                Proficient in ESRI technologies, open-source GIS tools, and web
+                development frameworks. Passionate about creating scalable
+                geospatial solutions that drive actionable insights.
+              </p>
+              <h4 class="text-xl font-semibold mb-3 text-blue-600">
+                Key Highlights
+              </h4>
+              <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                <li>
+                  2+ years of experience in GIS development and spatial analysis
+                </li>
+                <li>
+                  Experience with both proprietary (ESRI) and open-source (QGIS,
+                  GeoServer) GIS platforms
+                </li>
+                <li>
+                  Expertise in ArcGIS, QGIS, PostGIS, and Python automation
+                </li>
+                <li>
+                  Strong background in database management and geospatial
+                  visualization
+                </li>
+              </ul>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="inline-block bg-blue-100 text-blue-800 rounded-full px-3 py-1 text-sm font-medium"
+                >
+                  GIS Development
+                </span>
+                <span
+                  class="inline-block bg-blue-100 text-blue-800 rounded-full px-3 py-1 text-sm font-medium"
+                >
+                  Spatial Analysis
+                </span>
+                <span
+                  class="inline-block bg-blue-100 text-blue-800 rounded-full px-3 py-1 text-sm font-medium"
+                >
+                  Web Development
+                </span>
+                <span
+                  class="inline-block bg-blue-100 text-blue-800 rounded-full px-3 py-1 text-sm font-medium"
+                >
+                  Data Visualization
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2 md:pl-12">
+            <h3 class="text-2xl font-bold mb-6 text-blue-600">
+              Core Competencies
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div
+                class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition"
+              >
+                <div class="text-blue-600 text-3xl mb-4">
+                  <i class="fas fa-map"></i>
+                </div>
+                <h4 class="text-lg font-semibold mb-2">
+                  Geospatial Application Development
+                </h4>
+                <p class="text-gray-600">
+                  Creating custom GIS applications for specialized needs
+                </p>
+              </div>
+              <div
+                class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition"
+              >
+                <div class="text-blue-600 text-3xl mb-4">
+                  <i class="fas fa-database"></i>
+                </div>
+                <h4 class="text-lg font-semibold mb-2">
+                  GIS Database Management
+                </h4>
+                <p class="text-gray-600">
+                  Optimizing spatial databases for performance
+                </p>
+              </div>
+              <div
+                class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition"
+              >
+                <div class="text-blue-600 text-3xl mb-4">
+                  <i class="fas fa-chart-bar"></i>
+                </div>
+                <h4 class="text-lg font-semibold mb-2">
+                  Spatial Data Analysis
+                </h4>
+                <p class="text-gray-600">
+                  Deriving actionable insights from geographic data
+                </p>
+              </div>
+              <div
+                class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition"
+              >
+                <div class="text-blue-600 text-3xl mb-4">
+                  <i class="fas fa-code"></i>
+                </div>
+                <h4 class="text-lg font-semibold mb-2">
+                  Automation Development
+                </h4>
+                <p class="text-gray-600">
+                  Streamlining workflows with custom scripts
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          Professional Experience
+        </h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="relative">
+            <div
+              class="absolute top-0 bottom-0 left-5 md:left-1/2 w-0.5 bg-blue-300 transform md:translate-x-0.5"
+            ></div>
+
+            <!-- Experience 1 -->
+            <div class="experience-item relative mb-12 md:ml-0">
+              <div class="flex flex-col md:flex-row items-start">
+                <div class="flex md:justify-end md:w-1/2 md:pr-8 mb-4 md:mb-0">
+                  <div
+                    class="bg-white rounded-lg shadow-lg p-6 md:text-right w-full"
+                  >
+                    <h3 class="text-xl font-bold text-blue-600">
+                      Jr. GIS Developer
+                    </h3>
+                    <p class="text-gray-600 mb-2">Garudalytics Pvt Ltd</p>
+                    <p class="text-gray-500 mb-4">April 2024–Present</p>
+                    <ul class="text-gray-700 space-y-2">
+                      <li>
+                        Engineered defense GIS applications using the Esri SDK
+                        for Java, enhancing spatial intelligence with
+                        multi-layer analytics
+                      </li>
+                      <li>
+                        Developed HRMS web applications in React.js, automating
+                        HR workflows and reducing manual work by 25%
+                      </li>
+                      <li>
+                        Built GIS platforms integrating Esri and open-source
+                        technologies, improving workflow efficiency by 30%
+                      </li>
+                      <li>
+                        Optimized geospatial databases with PostGIS, ensuring
+                        faster query execution and data integrity
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  class="absolute left-0 md:left-1/2 w-10 h-10 rounded-full bg-blue-500 shadow flex items-center justify-center transform md:-translate-x-1/2 z-10"
+                >
+                  <i class="fas fa-briefcase text-white"></i>
+                </div>
+                <div class="md:w-1/2 md:pl-8 md:mt-0 ml-12 md:ml-0"></div>
+              </div>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="experience-item relative mb-12 md:mr-0">
+              <div class="flex flex-col md:flex-row items-start">
+                <div
+                  class="md:w-1/2 md:pr-8 md:text-right hidden md:block"
+                ></div>
+                <div
+                  class="absolute left-0 md:left-1/2 w-10 h-10 rounded-full bg-blue-500 shadow flex items-center justify-center transform md:-translate-x-1/2 z-10"
+                >
+                  <i class="fas fa-map-marked-alt text-white"></i>
+                </div>
+                <div class="md:w-1/2 md:pl-8 ml-12 md:ml-0">
+                  <div class="bg-white rounded-lg shadow-lg p-6 w-full">
+                    <h3 class="text-xl font-bold text-blue-600">
+                      Junior GIS Analyst
+                    </h3>
+                    <p class="text-gray-600 mb-2">Shelter Associates</p>
+                    <p class="text-gray-500 mb-4">March 2023–March 2024</p>
+                    <ul class="text-gray-700 space-y-2">
+                      <li>
+                        Led GIS mapping projects for infrastructure planning for
+                        various stakeholders
+                      </li>
+                      <li>
+                        Integrated Google road data, adding unmapped roads for
+                        improved geospatial data accuracy
+                      </li>
+                      <li>
+                        Automated Plus code generation for 15,000+ flats,
+                        improving location accuracy by 30%
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience 3 -->
+            <div class="experience-item relative mb-12 md:ml-0">
+              <div class="flex flex-col md:flex-row items-start">
+                <div class="flex md:justify-end md:w-1/2 md:pr-8 mb-4 md:mb-0">
+                  <div
+                    class="bg-white rounded-lg shadow-lg p-6 md:text-right w-full"
+                  >
+                    <h3 class="text-xl font-bold text-blue-600">
+                      GIS Analyst Intern
+                    </h3>
+                    <p class="text-gray-600 mb-2">
+                      Nektor Engineers and Project Consultants
+                    </p>
+                    <p class="text-gray-500 mb-4">Nov 2023–Dec 2023</p>
+                    <ul class="text-gray-700 space-y-2">
+                      <li>
+                        Digitized spatial data for the AMURT project, achieving
+                        99% accuracy in datasets
+                      </li>
+                      <li>
+                        Maintained digital data collection in field surveys,
+                        boosting project efficiency by 35%
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  class="absolute left-0 md:left-1/2 w-10 h-10 rounded-full bg-blue-500 shadow flex items-center justify-center transform md:-translate-x-1/2 z-10"
+                >
+                  <i class="fas fa-graduation-cap text-white"></i>
+                </div>
+                <div class="md:w-1/2 md:pl-8 md:mt-0 ml-12 md:ml-0"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          Projects
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="project-item bg-white rounded-xl shadow-lg overflow-hidden"
+          >
+            <div class="h-48 bg-blue-500 flex items-center justify-center">
+              <i class="fas fa-shield-alt text-white text-5xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 text-gray-800">
+                Defense GIS Application
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Developed a GIS-based defense tool with 10+ GIS analysis tools,
+                improving mission planning efficiency.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >ESRI SDK</span
+                >
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >Java</span
+                >
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >GIS</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="project-item bg-white rounded-xl shadow-lg overflow-hidden"
+          >
+            <div class="h-48 bg-green-500 flex items-center justify-center">
+              <i class="fas fa-users-cog text-white text-5xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 text-gray-800">
+                HRMS Web Application
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Designed an HRMS system in React.js, automating HR functions and
+                reducing paperwork by 70%.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >React.js</span
+                >
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >PrimeReact</span
+                >
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >Web Dev</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="project-item bg-white rounded-xl shadow-lg overflow-hidden"
+          >
+            <div class="h-48 bg-purple-500 flex items-center justify-center">
+              <i class="fas fa-robot text-white text-5xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 text-gray-800">
+                Geospatial Automation Tool
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Built Python-based GIS tools, reducing data validation time by
+                85% and improving accuracy with ArcPy.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >Python</span
+                >
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >ArcPy</span
+                >
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >Automation</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div
+            class="project-item bg-white rounded-xl shadow-lg overflow-hidden"
+          >
+            <div class="h-48 bg-yellow-500 flex items-center justify-center">
+              <i class="fas fa-map-marked text-white text-5xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 text-gray-800">
+                Mapping and Digitization
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Digitized 10,000+ structures for slum redevelopment, optimizing
+                infrastructure planning over 15 slums.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >QGIS</span
+                >
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >Digitization</span
+                >
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >Planning</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div
+            class="project-item bg-white rounded-xl shadow-lg overflow-hidden"
+          >
+            <div class="h-48 bg-red-500 flex items-center justify-center">
+              <i class="fas fa-school text-white text-5xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 text-gray-800">
+                Educational Center Mapping
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Mapped 35 NGO educational centers, improving accessibility and
+                logistical planning.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >GIS</span
+                >
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >Mapping</span
+                >
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >Accessibility</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div
+            class="project-item bg-white rounded-xl shadow-lg overflow-hidden"
+          >
+            <div class="h-48 bg-indigo-500 flex items-center justify-center">
+              <i class="fas fa-qrcode text-white text-5xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 text-gray-800">
+                Plus Code Generation
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Automated QR code generation for 15,000+ flats, enhancing
+                digital addressing accuracy in Solapur Ray Project.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >Python</span
+                >
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >QR Codes</span
+                >
+                <span
+                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
+                  >Plus Codes</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800">My Skills</h2>
+        </div>
+
+        <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+          <!-- GIS Expertise -->
+          <div
+            class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
+          >
+            <h3 class="text-xl font-semibold text-blue-600 mb-4">
+              GIS Expertise
+            </h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>QGIS</li>
+              <li>ArcGIS Pro</li>
+              <li>PostGIS</li>
+              <li>GeoServer</li>
+              <li>Google Earth Pro</li>
+              <li>Spatial Analysis</li>
+            </ul>
+          </div>
+
+          <!-- Development -->
+          <div
+            class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
+          >
+            <h3 class="text-xl font-semibold text-blue-600 mb-4">
+              Development
+            </h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>Java</li>
+              <li>React.js</li>
+              <li>Leaflet.js</li>
+              <li>Python (Geopandas, GDAL, Rasterio)</li>
+              <li>ArcGIS SDK</li>
+              <li>HTML/CSS/JavaScript</li>
+            </ul>
+          </div>
+
+          <!-- Database -->
+          <div
+            class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
+          >
+            <h3 class="text-xl font-semibold text-blue-600 mb-4">Database</h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>PostgreSQL</li>
+              <li>PostGIS</li>
+              <li>Geospatial Database Design</li>
+              <li>Database Optimization</li>
+            </ul>
+          </div>
+
+          <!-- Other Skills -->
+          <div
+            class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
+          >
+            <h3 class="text-xl font-semibold text-blue-600 mb-4">
+              Other Skills
+            </h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>Power BI</li>
+              <li>Automation</li>
+              <li>Debugging</li>
+              <li>Latex</li>
+              <li>Photoshop</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800">Certifications</h2>
+        </div>
+
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Certification Card -->
+          <div
+            class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition text-center"
+          >
+            <div class="text-blue-600 text-4xl mb-4">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">ARCGIS JavaScript API</h3>
+            <p class="text-gray-600">Ezealtech</p>
+          </div>
+
+          <div
+            class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition text-center"
+          >
+            <div class="text-blue-600 text-4xl mb-4">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Cartography</h3>
+            <p class="text-gray-600">ESRI</p>
+          </div>
+
+          <div
+            class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition text-center"
+          >
+            <div class="text-blue-600 text-4xl mb-4">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">SAR Data Processing</h3>
+            <p class="text-gray-600">IIRS, Dehradun</p>
+          </div>
+
+          <div
+            class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition text-center"
+          >
+            <div class="text-blue-600 text-4xl mb-4">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">GIS Knowledge Check</h3>
+            <p class="text-gray-600">Geo University</p>
+          </div>
+
+          <div
+            class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition text-center"
+          >
+            <div class="text-blue-600 text-4xl mb-4">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">
+              Data Analytics (Power BI)
+            </h3>
+            <p class="text-gray-600">TechTip24</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Uplifting Message with Image -->
+    <section class="bg-yellow-50 py-12 mt-10">
+      <div
+        class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10 max-w-5xl"
+      >
+        <!-- Message -->
+        <div class="md:w-2/3">
+          <div
+            class="bg-yellow-100 text-yellow-900 p-6 rounded-lg shadow-md text-center md:text-left"
+          >
+            <p class="text-lg font-medium">
+              Hey you! 🌟 You made it all the way down here — and that says a
+              lot. Whether you're here out of curiosity or connection, know that
+              I appreciate you.
+            </p>
+            <p class="mt-4 text-lg font-medium">
+              Here's a smile, just for you 🙂
+            </p>
+          </div>
+        </div>
+
+        <!-- Your Image -->
+        <div class="md:w-1/3 flex justify-center">
+          <img
+            id="confettiTrigger"
+            src="/path-to-your-image.jpg"
+            alt="Rohit Kalpande"
+            class="rounded-full w-40 h-40 object-cover border-4 border-yellow-300 shadow-lg cursor-pointer transition-transform hover:scale-105"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800">Contact Me</h2>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-10">
+          <!-- Contact Info -->
+          <div class="md:w-1/2">
+            <h3 class="text-xl font-semibold mb-6 text-blue-600">
+              Get In Touch
+            </h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-center gap-3">
+                <i class="fas fa-map-marker-alt text-blue-500 text-xl"></i>
+                <span>Pune, Maharashtra, India</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fas fa-envelope text-blue-500 text-xl"></i>
+                <span>developsrohit@gmail.com</span>
+              </li>
+            </ul>
+
+            <div class="mt-6 flex gap-4">
+              <a
+                href="https://linkedin.com/in/rohit-kalpande"
+                target="_blank"
+                class="text-blue-600 text-2xl hover:text-blue-800"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="https://github.com/rohit-kalpande"
+                target="_blank"
+                class="text-gray-800 text-2xl hover:text-black"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <!-- <div class="md:w-1/2">
+        <form id="contactForm" class="space-y-4">
+          <input type="text" placeholder="Your Name" required
+            class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <input type="email" placeholder="Your Email" required
+            class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <input type="text" placeholder="Subject" required
+            class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <textarea rows="5" placeholder="Your Message" required
+            class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          <button type="submit"
+            class="bg-blue-600 text-white py-3 px-6 rounded hover:bg-blue-700 transition w-full">
+            Send Message
+          </button>
+        </form>
+      </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 text-center">
+      <div class="container mx-auto">
+        <p>&copy; 2025 Rohit Kalpande. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <!-- Scroll Top Button -->
+    <div
+      id="scrollTop"
+      class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition cursor-pointer z-50"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </div>
+    <script>
+      const img = document.getElementById("confettiTrigger");
+
+      img.addEventListener("mouseenter", () => {
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+        });
+      });
+    </script>
+  </body>
+</html>
