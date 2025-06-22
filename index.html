@@ -13,7 +13,7 @@
 
     <style>
       .bg-map-pattern {
-        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232c3e50' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 BTN2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232c3e50' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
       }
       .experience-item,
       .project-item,
@@ -44,6 +44,26 @@
         width: 100%;
       }
 
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes spin-slow {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
       @keyframes orbit-slow {
         0% {
           transform: rotate(0deg);
@@ -52,9 +72,23 @@
           transform: rotate(360deg);
         }
       }
+
+      .animate-fade-in-up {
+        animation: fade-in-up 0.6s ease-out forwards;
+      }
+
+      .animate-spin-slow {
+        animation: spin-slow 20s linear infinite;
+      }
+
       .animate-orbit-slow {
-        animation: orbit-slow 10s linear infinite;
+        animation: orbit-slow 12s linear infinite;
         transform-origin: center center;
+      }
+
+      #quote {
+        min-height: 2.5rem; /* Reserve space to prevent layout shift */
+        transition: opacity 0.3s ease;
       }
     </style>
   </head>
@@ -108,64 +142,94 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
-      <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between-space-around">
-        
+    <section
+      class="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-white bg-map-pattern"
+    >
+      <div
+        class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-12"
+      >
         <!-- Intro Text (Left) -->
-        <div class="md:w-1/2 mb-10 md:mb-0">
-          <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-            Hi, I'm <span class="text-blue-600">Rohit Kalpande</span>
+        <div class="lg:w-1/2 text-center lg:text-left animate-fade-in-up">
+          <h1
+            class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-gray-800 tracking-tight"
+          >
+            Hi, I'm
+            <span
+              class="text-blue-600 bg-clip-text hover:text-blue-700 transition-colors duration-300"
+              >Rohit Kalpande</span
+            >
           </h1>
-          <h2 class="text-2xl md:text-3xl font-medium mb-6 text-gray-600">
+          <h2 class="text-2xl sm:text-3xl font-medium mb-6 text-gray-600">
             GIS Developer & Spatial Analyst
           </h2>
-          <p class="text-lg text-gray-600 mb-8">
+          <p
+            class="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+          >
             Results-driven geospatial professional creating scalable solutions
             that drive actionable insights
           </p>
-          <div class="flex flex-wrap gap-4">
+          <div class="flex flex-wrap justify-center lg:justify-start gap-4">
             <a
               href="#contact"
-              class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 shadow-lg hover:shadow-xl"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               Get In Touch
             </a>
             <a
               href="#projects"
-              class="bg-white hover:bg-gray-100 text-blue-600 font-medium py-3 px-6 rounded-lg border border-blue-600 transition duration-300 shadow-lg hover:shadow-xl"
+              class="bg-white hover:bg-gray-100 text-blue-600 font-medium py-3 px-6 rounded-lg border border-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               View Projects
             </a>
           </div>
         </div>
-    
+
         <!-- Globe Animation with Satellite Orbit (Right) -->
-        <div class="md:w-1/2 relative w-64 h-64 md:w-80 md:h-80 flex justify-between-space-around items-center">
-          
-          <!-- Animated Rings -->
-          <div class="absolute inset-0 rounded-full bg-blue-500 opacity-10 animate-ping"></div>
-          <div class="absolute inset-4 rounded-full bg-blue-400 opacity-20"></div>
-          <div class="absolute inset-8 rounded-full bg-blue-300 opacity-30 blur-sm"></div>
-    
+        <div
+          class="lg:w-1/2 relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 flex items-center justify-center overflow-hidden"
+        >
+          <!-- Static Rings -->
+          <div
+            class="absolute inset-0 rounded-full bg-blue-500 opacity-10"
+          ></div>
+          <div
+            class="absolute inset-6 rounded-full bg-blue-400 opacity-20"
+          ></div>
+          <div
+            class="absolute inset-12 rounded-full bg-blue-300 opacity-30 blur-sm"
+          ></div>
+
           <!-- Central Globe -->
-          <div class="absolute inset-12 bg-white rounded-full shadow-2xl flex items-center justify-center z-10">
-            <div class="text-6xl text-blue-600">
+          <div
+            class="absolute inset-16 bg-white rounded-full shadow-2xl flex items-center justify-center z-10 border border-blue-100"
+          >
+            <div class="text-5xl sm:text-6xl text-blue-600 animate-spin-slow">
               <i class="fas fa-globe-asia"></i>
             </div>
           </div>
-    
+
           <!-- Orbiting Satellite -->
-          <div class="absolute w-full h-full animate-orbit-slow pointer-events-none">
+          <div
+            class="absolute w-full h-full animate-orbit-slow pointer-events-none"
+          >
             <div class="absolute left-0 top-1/2 transform -translate-y-1/2">
-              <!-- <i class="fa-solid fa-satellite fa-flip"></i> -->
-              <i class="fas fa-satellite text-gray-800 text-2xl md:text-3xl"></i>
+              <i
+                class="fas fa-satellite text-gray-800 text-2xl sm:text-3xl animate-pulse"
+              ></i>
+            </div>
+            <!-- Additional Satellite for Visual Interest -->
+            <div
+              class="absolute left-0 top-1/2 transform -translate-y-1/2 rotate-180"
+            >
+              <i
+                class="fas fa-satellite text-gray-600 text-xl sm:text-2xl animate-pulse"
+                style="animation-delay: 0.5s"
+              ></i>
             </div>
           </div>
-          
         </div>
       </div>
     </section>
-        
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
@@ -769,7 +833,9 @@
           <div
             class="bg-yellow-100 text-yellow-900 p-6 rounded-lg shadow-md text-center md:text-left"
           >
-            <p class="text-lg font-medium">
+            <p             id="confettiTrigger"
+
+            class="text-lg font-medium">
               Hey you! 🌟 You made it all the way down here — and that says a
               lot. Whether you're here out of curiosity or connection, know that
               I appreciate you.
@@ -783,8 +849,8 @@
         <!-- Your Image -->
         <div class="md:w-1/3 flex justify-center">
           <img
-            id="confettiTrigger"
-            src="/path-to-your-image.jpg"
+            
+            src="/pic.png"
             alt="Rohit Kalpande"
             class="rounded-full w-40 h-40 object-cover border-4 border-yellow-300 shadow-lg cursor-pointer transition-transform hover:scale-105"
           />
@@ -800,7 +866,7 @@
         </div>
 
         <div class="flex flex-col md:flex-row gap-10">
-          <!-- Contact Info -->
+          <!-- Left Container: Contact Info -->
           <div class="md:w-1/2">
             <h3 class="text-xl font-semibold mb-6 text-blue-600">
               Get In Touch
@@ -834,23 +900,18 @@
             </div>
           </div>
 
-          <!-- Contact Form -->
-          <!-- <div class="md:w-1/2">
-        <form id="contactForm" class="space-y-4">
-          <input type="text" placeholder="Your Name" required
-            class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <input type="email" placeholder="Your Email" required
-            class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <input type="text" placeholder="Subject" required
-            class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <textarea rows="5" placeholder="Your Message" required
-            class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-          <button type="submit"
-            class="bg-blue-600 text-white py-3 px-6 rounded hover:bg-blue-700 transition w-full">
-            Send Message
-          </button>
-        </form>
-      </div> -->
+          <!-- Right Container: Geek Chuckle -->
+          <div class="md:w-1/2">
+            <div class="p-4 bg-white rounded-lg shadow-md">
+              <h4 class="text-lg font-medium text-gray-800 mb-2">
+                Geek Chuckle of the Moment
+              </h4>
+              <p id="quote" class="text-gray-600 italic text-sm sm:text-base">
+                "Fetching a geeky joke for you..."
+              </p>
+              <p id="author" class="text-gray-500 text-sm mt-1">— Geek Jokes</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -869,14 +930,203 @@
       <i class="fas fa-arrow-up"></i>
     </div>
     <script>
+      // Enhanced confetti trigger with multiple effects
       const img = document.getElementById("confettiTrigger");
+      let confettiTimeout;
 
       img.addEventListener("mouseenter", () => {
+        // Clear any existing timeout to prevent overlap
+        clearTimeout(confettiTimeout);
+
+        // Multi-burst confetti effect
         confetti({
-          particleCount: 100,
+          particleCount: 50,
           spread: 70,
           origin: { y: 0.6 },
+          colors: [
+            "#ff0000",
+            "#00ff00",
+            "#0000ff",
+            "#ffff00",
+            "#ff00ff",
+            "#00ffff",
+          ],
         });
+
+        // Second burst with different parameters
+        confettiTimeout = setTimeout(() => {
+          confetti({
+            particleCount: 30,
+            spread: 100,
+            origin: { y: 0.4 },
+            shapes: ["circle", "square"],
+          });
+        }, 200);
+      });
+
+      // Enhanced quote system
+      const quoteElement = document.getElementById("quote");
+      const authorElement = document.getElementById("author");
+      const loadingElement = document.getElementById("loading"); // Optional loading indicator
+
+      // Multiple API endpoints for better reliability
+      const apiUrls = [
+        "https://geek-jokes.sameerkumar.website/api?format=json",
+        "https://official-joke-api.appspot.com/jokes/programming/random",
+        "https://icanhazdadjoke.com/",
+      ];
+
+      let currentApiIndex = 0;
+      let isLoading = false;
+
+      async function fetchFunnyQuote() {
+        if (isLoading) return; // Prevent multiple simultaneous requests
+
+        isLoading = true;
+
+        // Show loading state
+        if (loadingElement) {
+          loadingElement.style.display = "block";
+        }
+        quoteElement.style.opacity = "0.5";
+
+        try {
+          const response = await fetchWithTimeout(
+            apiUrls[currentApiIndex],
+            5000
+          );
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+
+          // Handle different API response formats
+          let joke, author;
+
+          if (data.joke) {
+            // Geek jokes API format
+            joke = data.joke;
+            author = "— Geek Jokes";
+          } else if (data.setup && data.punchline) {
+            // Official joke API format
+            joke = `${data.setup} ${data.punchline}`;
+            author = "— Programming Jokes";
+          } else if (data.joke) {
+            // Dad jokes API format
+            joke = data.joke;
+            author = "— Dad Jokes";
+          } else {
+            throw new Error("Unexpected API response format");
+          }
+
+          // Animate quote change
+          quoteElement.style.transition = "opacity 0.3s ease";
+          quoteElement.innerText = joke;
+          authorElement.innerText = author;
+          quoteElement.style.opacity = "1";
+        } catch (error) {
+          console.error(`Error fetching from API ${currentApiIndex}:`, error);
+
+          // Try next API if available
+          if (currentApiIndex < apiUrls.length - 1) {
+            currentApiIndex++;
+            setTimeout(() => fetchFunnyQuote(), 1000); // Retry with next API
+            return;
+          }
+
+          // All APIs failed, show fallback
+          const fallbackJokes = [
+            "Why do programmers prefer dark mode? Because light attracts bugs!",
+            "How many programmers does it take to change a light bulb? None, that's a hardware problem.",
+            "Why do Java developers wear glasses? Because they can't C#!",
+            "There are only 10 types of people: those who understand binary and those who don't.",
+          ];
+
+          const randomJoke =
+            fallbackJokes[Math.floor(Math.random() * fallbackJokes.length)];
+          quoteElement.innerText = randomJoke;
+          authorElement.innerText = "— Offline Jokes";
+          quoteElement.style.opacity = "1";
+
+          // Reset API index for next attempt
+          currentApiIndex = 0;
+        } finally {
+          isLoading = false;
+          if (loadingElement) {
+            loadingElement.style.display = "none";
+          }
+        }
+      }
+
+      // Fetch with timeout utility
+      function fetchWithTimeout(url, timeout = 5000) {
+        return Promise.race([
+          fetch(url, {
+            headers: {
+              Accept: "application/json",
+              "User-Agent": "Quote-App/1.0",
+            },
+          }),
+          new Promise((_, reject) =>
+            setTimeout(() => reject(new Error("Request timeout")), timeout)
+          ),
+        ]);
+      }
+
+      // Manual refresh functionality
+      const refreshButton = document.getElementById("refreshQuote");
+      if (refreshButton) {
+        refreshButton.addEventListener("click", () => {
+          if (!isLoading) {
+            fetchFunnyQuote();
+            // Optional: Add click animation
+            refreshButton.style.transform = "rotate(360deg)";
+            setTimeout(() => {
+              refreshButton.style.transform = "rotate(0deg)";
+            }, 300);
+          }
+        });
+      }
+
+      // Keyboard shortcut for refresh (Space key)
+      document.addEventListener("keydown", (event) => {
+        if (event.code === "Space" && !isLoading) {
+          event.preventDefault();
+          fetchFunnyQuote();
+        }
+      });
+
+      // Visibility API - pause/resume when tab becomes visible/hidden
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") {
+          // Fetch fresh quote when user returns to tab
+          setTimeout(fetchFunnyQuote, 500);
+        }
+      });
+
+      // Initial load
+      fetchFunnyQuote();
+
+      // Auto-refresh with exponential backoff on errors
+      let refreshInterval = 300000; // 5 minutes instead of 1000 seconds
+      let refreshTimer;
+
+      function scheduleNextRefresh() {
+        clearTimeout(refreshTimer);
+        refreshTimer = setTimeout(() => {
+          fetchFunnyQuote();
+          scheduleNextRefresh();
+        }, refreshInterval);
+      }
+
+      scheduleNextRefresh();
+
+      // Cleanup on page unload
+      window.addEventListener("beforeunload", () => {
+        clearTimeout(confettiTimeout);
+        clearTimeout(refreshTimer);
       });
     </script>
   </body>
