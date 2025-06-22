@@ -232,123 +232,324 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
+    <section id="about" class="py-12 bg-gradient-to-br from-gray-50 to-blue-50">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800"
+        >
           About Me
         </h2>
-        <div class="flex flex-col md:flex-row items-center">
-          <div class="md:w-1/2 mb-10 md:mb-0">
-            <div class="bg-blue-50 p-8 rounded-xl shadow-lg">
-              <h3 class="text-2xl font-bold mb-4 text-blue-600">
-                Professional Summary
-              </h3>
-              <p class="text-gray-700 mb-6">
-                Results-driven GIS developer with expertise in geospatial
-                application development, database management, and automation.
-                Proficient in ESRI technologies, open-source GIS tools, and web
-                development frameworks. Passionate about creating scalable
-                geospatial solutions that drive actionable insights.
-              </p>
-              <h4 class="text-xl font-semibold mb-3 text-blue-600">
-                Key Highlights
-              </h4>
-              <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
-                <li>
-                  2+ years of experience in GIS development and spatial analysis
-                </li>
-                <li>
-                  Experience with both proprietary (ESRI) and open-source (QGIS,
-                  GeoServer) GIS platforms
-                </li>
-                <li>
-                  Expertise in ArcGIS, QGIS, PostGIS, and Python automation
-                </li>
-                <li>
-                  Strong background in database management and geospatial
-                  visualization
-                </li>
-              </ul>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="inline-block bg-blue-100 text-blue-800 rounded-full px-3 py-1 text-sm font-medium"
+
+        <!-- Hero Introduction -->
+        <div class="max-w-4xl mx-auto mb-10">
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 md:p-8 relative overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full -translate-y-16 translate-x-16 opacity-60"
+            ></div>
+            <div class="relative z-10">
+              <div class="flex items-start gap-6">
+                <div
+                  class="hidden md:block w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0"
                 >
-                  GIS Development
-                </span>
-                <span
-                  class="inline-block bg-blue-100 text-blue-800 rounded-full px-3 py-1 text-sm font-medium"
-                >
-                  Spatial Analysis
-                </span>
-                <span
-                  class="inline-block bg-blue-100 text-blue-800 rounded-full px-3 py-1 text-sm font-medium"
-                >
-                  Web Development
-                </span>
-                <span
-                  class="inline-block bg-blue-100 text-blue-800 rounded-full px-3 py-1 text-sm font-medium"
-                >
-                  Data Visualization
-                </span>
+                  <i class="fas fa-user-astronaut text-white text-2xl"></i>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-3">
+                    Transforming Spatial Data into Strategic Solutions
+                  </h3>
+                  <p class="text-gray-600 text-lg leading-relaxed mb-4">
+                    I'm a passionate GIS developer who bridges the gap between
+                    complex geospatial data and real-world impact. With
+                    <span class="font-semibold text-blue-600"
+                      >2+ years of hands-on experience</span
+                    >, I've helped organizations make smarter decisions through
+                    innovative mapping solutions and automated workflows.
+                  </p>
+                  <div class="flex flex-wrap gap-3">
+                    <div
+                      class="flex items-center gap-2 bg-blue-50 px-3 py-1.5 rounded-lg"
+                    >
+                      <i
+                        class="fas fa-map-marked-alt text-blue-600 text-sm"
+                      ></i>
+                      <span class="text-blue-700 text-sm font-medium"
+                        >15,000+ Locations Mapped</span
+                      >
+                    </div>
+                    <div
+                      class="flex items-center gap-2 bg-green-50 px-3 py-1.5 rounded-lg"
+                    >
+                      <i class="fas fa-chart-line text-green-600 text-sm"></i>
+                      <span class="text-green-700 text-sm font-medium"
+                        >85% Process Improvement</span
+                      >
+                    </div>
+                    <div
+                      class="flex items-center gap-2 bg-purple-50 px-3 py-1.5 rounded-lg"
+                    >
+                      <i class="fas fa-code text-purple-600 text-sm"></i>
+                      <span class="text-purple-700 text-sm font-medium"
+                        >10+ GIS Tools Built</span
+                      >
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="md:w-1/2 md:pl-12">
-            <h3 class="text-2xl font-bold mb-6 text-blue-600">
-              Core Competencies
-            </h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div
-                class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition"
-              >
-                <div class="text-blue-600 text-3xl mb-4">
-                  <i class="fas fa-map"></i>
+        </div>
+
+        <!-- Skills & Expertise Grid -->
+        <div class="max-w-5xl mx-auto mb-10">
+          <h3 class="text-xl font-bold text-center mb-6 text-gray-800">
+            Core Expertise
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Skill 1 -->
+            <div
+              class="bg-white rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 group"
+            >
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i class="fas fa-globe text-white text-sm"></i>
                 </div>
-                <h4 class="text-lg font-semibold mb-2">
-                  Geospatial Application Development
-                </h4>
-                <p class="text-gray-600">
-                  Creating custom GIS applications for specialized needs
-                </p>
+                <h4 class="font-semibold text-gray-800">GIS Development</h4>
               </div>
-              <div
-                class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition"
-              >
-                <div class="text-blue-600 text-3xl mb-4">
-                  <i class="fas fa-database"></i>
-                </div>
-                <h4 class="text-lg font-semibold mb-2">
-                  GIS Database Management
-                </h4>
-                <p class="text-gray-600">
-                  Optimizing spatial databases for performance
-                </p>
+              <p class="text-gray-600 text-sm mb-3">
+                Custom applications with ESRI SDK & React.js
+              </p>
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div
+                  class="bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full"
+                  style="width: 90%"
+                ></div>
               </div>
-              <div
-                class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition"
-              >
-                <div class="text-blue-600 text-3xl mb-4">
-                  <i class="fas fa-chart-bar"></i>
+            </div>
+
+            <!-- Skill 2 -->
+            <div
+              class="bg-white rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 group"
+            >
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i class="fas fa-database text-white text-sm"></i>
                 </div>
-                <h4 class="text-lg font-semibold mb-2">
-                  Spatial Data Analysis
-                </h4>
-                <p class="text-gray-600">
-                  Deriving actionable insights from geographic data
-                </p>
+                <h4 class="font-semibold text-gray-800">Database Management</h4>
               </div>
-              <div
-                class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition"
-              >
-                <div class="text-blue-600 text-3xl mb-4">
-                  <i class="fas fa-code"></i>
+              <p class="text-gray-600 text-sm mb-3">
+                PostGIS optimization & spatial queries
+              </p>
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div
+                  class="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full"
+                  style="width: 85%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Skill 3 -->
+            <div
+              class="bg-white rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 group"
+            >
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i class="fas fa-robot text-white text-sm"></i>
                 </div>
-                <h4 class="text-lg font-semibold mb-2">
-                  Automation Development
+                <h4 class="font-semibold text-gray-800">Automation</h4>
+              </div>
+              <p class="text-gray-600 text-sm mb-3">
+                Python scripting & ArcPy workflows
+              </p>
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div
+                  class="bg-gradient-to-r from-purple-400 to-purple-600 h-2 rounded-full"
+                  style="width: 88%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Skill 4 -->
+            <div
+              class="bg-white rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 group"
+            >
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i class="fas fa-chart-area text-white text-sm"></i>
+                </div>
+                <h4 class="font-semibold text-gray-800">Spatial Analysis</h4>
+              </div>
+              <p class="text-gray-600 text-sm mb-3">
+                Multi-layer analytics & insights
+              </p>
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div
+                  class="bg-gradient-to-r from-orange-400 to-orange-600 h-2 rounded-full"
+                  style="width: 92%"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technology Stack -->
+        <div class="max-w-4xl mx-auto mb-10">
+          <h3 class="text-xl font-bold text-center mb-6 text-gray-800">
+            Technology Stack
+          </h3>
+          <div class="bg-white rounded-2xl shadow-lg p-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <!-- GIS Tools -->
+              <div class="text-center">
+                <h4
+                  class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wide"
+                >
+                  GIS Platforms
                 </h4>
-                <p class="text-gray-600">
-                  Streamlining workflows with custom scripts
-                </p>
+                <div class="space-y-2">
+                  <div
+                    class="flex items-center gap-2 bg-blue-50 px-3 py-2 rounded-lg"
+                  >
+                    <i class="fas fa-layer-group text-blue-600 text-sm"></i>
+                    <span class="text-blue-700 text-sm font-medium"
+                      >ArcGIS</span
+                    >
+                  </div>
+                  <div
+                    class="flex items-center gap-2 bg-green-50 px-3 py-2 rounded-lg"
+                  >
+                    <i class="fas fa-map text-green-600 text-sm"></i>
+                    <span class="text-green-700 text-sm font-medium">QGIS</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Programming -->
+              <div class="text-center">
+                <h4
+                  class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wide"
+                >
+                  Programming
+                </h4>
+                <div class="space-y-2">
+                  <div
+                    class="flex items-center gap-2 bg-yellow-50 px-3 py-2 rounded-lg"
+                  >
+                    <i class="fab fa-python text-yellow-600 text-sm"></i>
+                    <span class="text-yellow-700 text-sm font-medium"
+                      >Python</span
+                    >
+                  </div>
+                  <div
+                    class="flex items-center gap-2 bg-orange-50 px-3 py-2 rounded-lg"
+                  >
+                    <i class="fab fa-java text-orange-600 text-sm"></i>
+                    <span class="text-orange-700 text-sm font-medium"
+                      >Java</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Web Tech -->
+              <div class="text-center">
+                <h4
+                  class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wide"
+                >
+                  Web Development
+                </h4>
+                <div class="space-y-2">
+                  <div
+                    class="flex items-center gap-2 bg-cyan-50 px-3 py-2 rounded-lg"
+                  >
+                    <i class="fab fa-react text-cyan-600 text-sm"></i>
+                    <span class="text-cyan-700 text-sm font-medium"
+                      >React.js</span
+                    >
+                  </div>
+                  <div
+                    class="flex items-center gap-2 bg-purple-50 px-3 py-2 rounded-lg"
+                  >
+                    <i class="fas fa-code text-purple-600 text-sm"></i>
+                    <span class="text-purple-700 text-sm font-medium"
+                      >APIs</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Databases -->
+              <div class="text-center">
+                <h4
+                  class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wide"
+                >
+                  Databases
+                </h4>
+                <div class="space-y-2">
+                  <div
+                    class="flex items-center gap-2 bg-indigo-50 px-3 py-2 rounded-lg"
+                  >
+                    <i class="fas fa-database text-indigo-600 text-sm"></i>
+                    <span class="text-indigo-700 text-sm font-medium"
+                      >PostGIS</span
+                    >
+                  </div>
+                  <div
+                    class="flex items-center gap-2 bg-gray-100 px-3 py-2 rounded-lg"
+                  >
+                    <i class="fas fa-server text-gray-600 text-sm"></i>
+                    <span class="text-gray-700 text-sm font-medium"
+                      >Spatial DB</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Philosophy -->
+        <div class="max-w-3xl mx-auto">
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 relative overflow-hidden"
+          >
+            <div
+              class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-600"
+            ></div>
+            <div class="pl-6">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-quote-left text-white text-lg"></i>
+                </div>
+                <div>
+                  <p class="text-gray-700 text-lg font-medium mb-3 italic">
+                    "Every map tells a story, every dataset holds potential, and
+                    every automation saves countless hours. I believe in
+                    creating GIS solutions that don't just process data—they
+                    empower decision-makers."
+                  </p>
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center"
+                    >
+                      <i class="fas fa-user text-white text-sm"></i>
+                    </div>
+                    <span class="text-gray-600 font-medium"
+                      >My Professional Philosophy</span
+                    >
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -357,330 +558,460 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gray-50">
+    <section id="experience" class="py-12 bg-white">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800"
+        >
           Professional Experience
         </h2>
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-3xl mx-auto">
           <div class="relative">
+            <!-- Timeline Line -->
             <div
-              class="absolute top-0 bottom-0 left-5 md:left-1/2 w-0.5 bg-blue-300 transform md:translate-x-0.5"
+              class="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 via-blue-500 to-blue-600 transform md:-translate-x-0.5"
             ></div>
 
             <!-- Experience 1 -->
-            <div class="experience-item relative mb-12 md:ml-0">
-              <div class="flex flex-col md:flex-row items-start">
-                <div class="flex md:justify-end md:w-1/2 md:pr-8 mb-4 md:mb-0">
-                  <div
-                    class="bg-white rounded-lg shadow-lg p-6 md:text-right w-full"
-                  >
-                    <h3 class="text-xl font-bold text-blue-600">
-                      Jr. GIS Developer
-                    </h3>
-                    <p class="text-gray-600 mb-2">Garudalytics Pvt Ltd</p>
-                    <p class="text-gray-500 mb-4">April 2024–Present</p>
-                    <ul class="text-gray-700 space-y-2">
-                      <li>
-                        Engineered defense GIS applications using the Esri SDK
-                        for Java, enhancing spatial intelligence with
-                        multi-layer analytics
-                      </li>
-                      <li>
-                        Developed HRMS web applications in React.js, automating
-                        HR workflows and reducing manual work by 25%
-                      </li>
-                      <li>
-                        Built GIS platforms integrating Esri and open-source
-                        technologies, improving workflow efficiency by 30%
-                      </li>
-                      <li>
-                        Optimized geospatial databases with PostGIS, ensuring
-                        faster query execution and data integrity
-                      </li>
-                    </ul>
+            <div class="experience-item relative mb-8 group">
+              <div class="flex items-start">
+                <!-- Timeline Circle -->
+                <div
+                  class="absolute left-2 md:left-1/2 w-8 h-8 rounded-full bg-blue-500 shadow-lg flex items-center justify-center transform md:-translate-x-4 z-10 group-hover:bg-blue-600 transition-colors duration-300"
+                >
+                  <i class="fas fa-briefcase text-white text-sm"></i>
+                </div>
+
+                <!-- Content Card -->
+                <div class="ml-12 md:ml-0 md:w-full">
+                  <div class="md:flex md:items-start">
+                    <div class="md:w-1/2 md:pr-6">
+                      <div
+                        class="bg-gray-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300 group-hover:bg-blue-50"
+                      >
+                        <div class="flex flex-col md:text-right">
+                          <h3 class="text-lg font-semibold text-blue-600 mb-1">
+                            Jr. GIS Developer
+                          </h3>
+                          <p class="text-gray-700 font-medium mb-1">
+                            Garudalytics Pvt Ltd
+                          </p>
+                          <span
+                            class="inline-block bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full mb-3 md:self-end"
+                          >
+                            April 2024 – Present
+                          </span>
+                          <div class="space-y-2 text-sm text-gray-600">
+                            <p>
+                              • Engineered defense GIS applications using Esri
+                              SDK for Java with multi-layer analytics
+                            </p>
+                            <p>
+                              • Developed React.js HRMS applications, reducing
+                              manual work by 25%
+                            </p>
+                            <p>
+                              • Built integrated GIS platforms improving
+                              workflow efficiency by 30%
+                            </p>
+                            <p>
+                              • Optimized PostGIS databases for faster query
+                              execution
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-6 mt-4 md:mt-0">
+                      <div class="hidden md:block h-full"></div>
+                    </div>
                   </div>
                 </div>
-                <div
-                  class="absolute left-0 md:left-1/2 w-10 h-10 rounded-full bg-blue-500 shadow flex items-center justify-center transform md:-translate-x-1/2 z-10"
-                >
-                  <i class="fas fa-briefcase text-white"></i>
-                </div>
-                <div class="md:w-1/2 md:pl-8 md:mt-0 ml-12 md:ml-0"></div>
               </div>
             </div>
 
             <!-- Experience 2 -->
-            <div class="experience-item relative mb-12 md:mr-0">
-              <div class="flex flex-col md:flex-row items-start">
+            <div class="experience-item relative mb-8 group">
+              <div class="flex items-start">
+                <!-- Timeline Circle -->
                 <div
-                  class="md:w-1/2 md:pr-8 md:text-right hidden md:block"
-                ></div>
-                <div
-                  class="absolute left-0 md:left-1/2 w-10 h-10 rounded-full bg-blue-500 shadow flex items-center justify-center transform md:-translate-x-1/2 z-10"
+                  class="absolute left-2 md:left-1/2 w-8 h-8 rounded-full bg-blue-500 shadow-lg flex items-center justify-center transform md:-translate-x-4 z-10 group-hover:bg-blue-600 transition-colors duration-300"
                 >
-                  <i class="fas fa-map-marked-alt text-white"></i>
+                  <i class="fas fa-map-marked-alt text-white text-sm"></i>
                 </div>
-                <div class="md:w-1/2 md:pl-8 ml-12 md:ml-0">
-                  <div class="bg-white rounded-lg shadow-lg p-6 w-full">
-                    <h3 class="text-xl font-bold text-blue-600">
-                      Junior GIS Analyst
-                    </h3>
-                    <p class="text-gray-600 mb-2">Shelter Associates</p>
-                    <p class="text-gray-500 mb-4">March 2023–March 2024</p>
-                    <ul class="text-gray-700 space-y-2">
-                      <li>
-                        Led GIS mapping projects for infrastructure planning for
-                        various stakeholders
-                      </li>
-                      <li>
-                        Integrated Google road data, adding unmapped roads for
-                        improved geospatial data accuracy
-                      </li>
-                      <li>
-                        Automated Plus code generation for 15,000+ flats,
-                        improving location accuracy by 30%
-                      </li>
-                    </ul>
+
+                <!-- Content Card -->
+                <div class="ml-12 md:ml-0 md:w-full">
+                  <div class="md:flex md:items-start">
+                    <div class="md:w-1/2 md:pr-6">
+                      <div class="hidden md:block h-full"></div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-6">
+                      <div
+                        class="bg-gray-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300 group-hover:bg-green-50"
+                      >
+                        <h3 class="text-lg font-semibold text-green-600 mb-1">
+                          Junior GIS Analyst
+                        </h3>
+                        <p class="text-gray-700 font-medium mb-1">
+                          Shelter Associates
+                        </p>
+                        <span
+                          class="inline-block bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full mb-3"
+                        >
+                          March 2023 – March 2024
+                        </span>
+                        <div class="space-y-2 text-sm text-gray-600">
+                          <p>
+                            • Led GIS mapping projects for infrastructure
+                            planning
+                          </p>
+                          <p>
+                            • Integrated Google road data for improved
+                            geospatial accuracy
+                          </p>
+                          <p>
+                            • Automated Plus code generation for 15,000+ flats
+                            (30% accuracy boost)
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Experience 3 -->
-            <div class="experience-item relative mb-12 md:ml-0">
-              <div class="flex flex-col md:flex-row items-start">
-                <div class="flex md:justify-end md:w-1/2 md:pr-8 mb-4 md:mb-0">
-                  <div
-                    class="bg-white rounded-lg shadow-lg p-6 md:text-right w-full"
-                  >
-                    <h3 class="text-xl font-bold text-blue-600">
-                      GIS Analyst Intern
-                    </h3>
-                    <p class="text-gray-600 mb-2">
-                      Nektor Engineers and Project Consultants
-                    </p>
-                    <p class="text-gray-500 mb-4">Nov 2023–Dec 2023</p>
-                    <ul class="text-gray-700 space-y-2">
-                      <li>
-                        Digitized spatial data for the AMURT project, achieving
-                        99% accuracy in datasets
-                      </li>
-                      <li>
-                        Maintained digital data collection in field surveys,
-                        boosting project efficiency by 35%
-                      </li>
-                    </ul>
+            <div class="experience-item relative mb-8 group">
+              <div class="flex items-start">
+                <!-- Timeline Circle -->
+                <div
+                  class="absolute left-2 md:left-1/2 w-8 h-8 rounded-full bg-blue-500 shadow-lg flex items-center justify-center transform md:-translate-x-4 z-10 group-hover:bg-blue-600 transition-colors duration-300"
+                >
+                  <i class="fas fa-graduation-cap text-white text-sm"></i>
+                </div>
+
+                <!-- Content Card -->
+                <div class="ml-12 md:ml-0 md:w-full">
+                  <div class="md:flex md:items-start">
+                    <div class="md:w-1/2 md:pr-6">
+                      <div
+                        class="bg-gray-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300 group-hover:bg-purple-50"
+                      >
+                        <div class="flex flex-col md:text-right">
+                          <h3
+                            class="text-lg font-semibold text-purple-600 mb-1"
+                          >
+                            GIS Analyst Intern
+                          </h3>
+                          <p class="text-gray-700 font-medium mb-1">
+                            Nektor Engineers and Project Consultants
+                          </p>
+                          <span
+                            class="inline-block bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full mb-3 md:self-end"
+                          >
+                            Nov 2023 – Dec 2023
+                          </span>
+                          <div class="space-y-2 text-sm text-gray-600">
+                            <p>
+                              • Digitized spatial data for AMURT project with
+                              99% accuracy
+                            </p>
+                            <p>
+                              • Maintained digital data collection boosting
+                              efficiency by 35%
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-6 mt-4 md:mt-0">
+                      <div class="hidden md:block h-full"></div>
+                    </div>
                   </div>
                 </div>
-                <div
-                  class="absolute left-0 md:left-1/2 w-10 h-10 rounded-full bg-blue-500 shadow flex items-center justify-center transform md:-translate-x-1/2 z-10"
-                >
-                  <i class="fas fa-graduation-cap text-white"></i>
-                </div>
-                <div class="md:w-1/2 md:pl-8 md:mt-0 ml-12 md:ml-0"></div>
               </div>
             </div>
+
+            <!-- Timeline End -->
+            <div
+              class="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-gray-300 transform md:-translate-x-2 -bottom-2"
+            ></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white">
+    <section id="projects" class="py-12 bg-gray-50">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
-          Projects
+        <h2
+          class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800"
+        >
+          Featured Projects
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Project 1 -->
           <div
-            class="project-item bg-white rounded-xl shadow-lg overflow-hidden"
+            class="project-item bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
           >
-            <div class="h-48 bg-blue-500 flex items-center justify-center">
-              <i class="fas fa-shield-alt text-white text-5xl"></i>
+            <div
+              class="h-32 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center relative overflow-hidden"
+            >
+              <i
+                class="fas fa-shield-alt text-white text-3xl group-hover:scale-110 transition-transform duration-300"
+              ></i>
+              <div
+                class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+              ></div>
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-3 text-gray-800">
+            <div class="p-5">
+              <h3
+                class="text-lg font-semibold mb-2 text-gray-800 group-hover:text-blue-600 transition-colors duration-300"
+              >
                 Defense GIS Application
               </h3>
-              <p class="text-gray-600 mb-4">
-                Developed a GIS-based defense tool with 10+ GIS analysis tools,
+              <p class="text-gray-600 text-sm mb-3 leading-relaxed">
+                Developed a GIS-based defense tool with 10+ analysis tools,
                 improving mission planning efficiency.
               </p>
-              <div class="flex flex-wrap gap-2 mb-4">
+              <div class="flex flex-wrap gap-1.5">
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >ESRI SDK</span
+                  class="inline-block bg-blue-50 text-blue-700 rounded-md px-2.5 py-1 text-xs font-medium border border-blue-200"
                 >
+                  ESRI SDK
+                </span>
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >Java</span
+                  class="inline-block bg-orange-50 text-orange-700 rounded-md px-2.5 py-1 text-xs font-medium border border-orange-200"
                 >
+                  Java
+                </span>
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >GIS</span
+                  class="inline-block bg-green-50 text-green-700 rounded-md px-2.5 py-1 text-xs font-medium border border-green-200"
                 >
+                  GIS
+                </span>
               </div>
             </div>
           </div>
 
           <!-- Project 2 -->
           <div
-            class="project-item bg-white rounded-xl shadow-lg overflow-hidden"
+            class="project-item bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
           >
-            <div class="h-48 bg-green-500 flex items-center justify-center">
-              <i class="fas fa-users-cog text-white text-5xl"></i>
+            <div
+              class="h-32 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center relative overflow-hidden"
+            >
+              <i
+                class="fas fa-users-cog text-white text-3xl group-hover:scale-110 transition-transform duration-300"
+              ></i>
+              <div
+                class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+              ></div>
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-3 text-gray-800">
+            <div class="p-5">
+              <h3
+                class="text-lg font-semibold mb-2 text-gray-800 group-hover:text-green-600 transition-colors duration-300"
+              >
                 HRMS Web Application
               </h3>
-              <p class="text-gray-600 mb-4">
+              <p class="text-gray-600 text-sm mb-3 leading-relaxed">
                 Designed an HRMS system in React.js, automating HR functions and
                 reducing paperwork by 70%.
               </p>
-              <div class="flex flex-wrap gap-2 mb-4">
+              <div class="flex flex-wrap gap-1.5">
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >React.js</span
+                  class="inline-block bg-cyan-50 text-cyan-700 rounded-md px-2.5 py-1 text-xs font-medium border border-cyan-200"
                 >
+                  React.js
+                </span>
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >PrimeReact</span
+                  class="inline-block bg-purple-50 text-purple-700 rounded-md px-2.5 py-1 text-xs font-medium border border-purple-200"
                 >
+                  PrimeReact
+                </span>
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >Web Dev</span
+                  class="inline-block bg-indigo-50 text-indigo-700 rounded-md px-2.5 py-1 text-xs font-medium border border-indigo-200"
                 >
+                  Web Dev
+                </span>
               </div>
             </div>
           </div>
 
           <!-- Project 3 -->
           <div
-            class="project-item bg-white rounded-xl shadow-lg overflow-hidden"
+            class="project-item bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
           >
-            <div class="h-48 bg-purple-500 flex items-center justify-center">
-              <i class="fas fa-robot text-white text-5xl"></i>
+            <div
+              class="h-32 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center relative overflow-hidden"
+            >
+              <i
+                class="fas fa-robot text-white text-3xl group-hover:scale-110 transition-transform duration-300"
+              ></i>
+              <div
+                class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+              ></div>
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-3 text-gray-800">
+            <div class="p-5">
+              <h3
+                class="text-lg font-semibold mb-2 text-gray-800 group-hover:text-purple-600 transition-colors duration-300"
+              >
                 Geospatial Automation Tool
               </h3>
-              <p class="text-gray-600 mb-4">
+              <p class="text-gray-600 text-sm mb-3 leading-relaxed">
                 Built Python-based GIS tools, reducing data validation time by
                 85% and improving accuracy with ArcPy.
               </p>
-              <div class="flex flex-wrap gap-2 mb-4">
+              <div class="flex flex-wrap gap-1.5">
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >Python</span
+                  class="inline-block bg-yellow-50 text-yellow-700 rounded-md px-2.5 py-1 text-xs font-medium border border-yellow-200"
                 >
+                  Python
+                </span>
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >ArcPy</span
+                  class="inline-block bg-blue-50 text-blue-700 rounded-md px-2.5 py-1 text-xs font-medium border border-blue-200"
                 >
+                  ArcPy
+                </span>
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >Automation</span
+                  class="inline-block bg-red-50 text-red-700 rounded-md px-2.5 py-1 text-xs font-medium border border-red-200"
                 >
+                  Automation
+                </span>
               </div>
             </div>
           </div>
 
           <!-- Project 4 -->
           <div
-            class="project-item bg-white rounded-xl shadow-lg overflow-hidden"
+            class="project-item bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
           >
-            <div class="h-48 bg-yellow-500 flex items-center justify-center">
-              <i class="fas fa-map-marked text-white text-5xl"></i>
+            <div
+              class="h-32 bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center relative overflow-hidden"
+            >
+              <i
+                class="fas fa-map-marked text-white text-3xl group-hover:scale-110 transition-transform duration-300"
+              ></i>
+              <div
+                class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+              ></div>
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-3 text-gray-800">
+            <div class="p-5">
+              <h3
+                class="text-lg font-semibold mb-2 text-gray-800 group-hover:text-yellow-600 transition-colors duration-300"
+              >
                 Mapping and Digitization
               </h3>
-              <p class="text-gray-600 mb-4">
+              <p class="text-gray-600 text-sm mb-3 leading-relaxed">
                 Digitized 10,000+ structures for slum redevelopment, optimizing
                 infrastructure planning over 15 slums.
               </p>
-              <div class="flex flex-wrap gap-2 mb-4">
+              <div class="flex flex-wrap gap-1.5">
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >QGIS</span
+                  class="inline-block bg-teal-50 text-teal-700 rounded-md px-2.5 py-1 text-xs font-medium border border-teal-200"
                 >
+                  QGIS
+                </span>
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >Digitization</span
+                  class="inline-block bg-pink-50 text-pink-700 rounded-md px-2.5 py-1 text-xs font-medium border border-pink-200"
                 >
+                  Digitization
+                </span>
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >Planning</span
+                  class="inline-block bg-emerald-50 text-emerald-700 rounded-md px-2.5 py-1 text-xs font-medium border border-emerald-200"
                 >
+                  Planning
+                </span>
               </div>
             </div>
           </div>
 
           <!-- Project 5 -->
           <div
-            class="project-item bg-white rounded-xl shadow-lg overflow-hidden"
+            class="project-item bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
           >
-            <div class="h-48 bg-red-500 flex items-center justify-center">
-              <i class="fas fa-school text-white text-5xl"></i>
+            <div
+              class="h-32 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center relative overflow-hidden"
+            >
+              <i
+                class="fas fa-school text-white text-3xl group-hover:scale-110 transition-transform duration-300"
+              ></i>
+              <div
+                class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+              ></div>
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-3 text-gray-800">
+            <div class="p-5">
+              <h3
+                class="text-lg font-semibold mb-2 text-gray-800 group-hover:text-red-600 transition-colors duration-300"
+              >
                 Educational Center Mapping
               </h3>
-              <p class="text-gray-600 mb-4">
+              <p class="text-gray-600 text-sm mb-3 leading-relaxed">
                 Mapped 35 NGO educational centers, improving accessibility and
                 logistical planning.
               </p>
-              <div class="flex flex-wrap gap-2 mb-4">
+              <div class="flex flex-wrap gap-1.5">
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >GIS</span
+                  class="inline-block bg-violet-50 text-violet-700 rounded-md px-2.5 py-1 text-xs font-medium border border-violet-200"
                 >
+                  GIS
+                </span>
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >Mapping</span
+                  class="inline-block bg-sky-50 text-sky-700 rounded-md px-2.5 py-1 text-xs font-medium border border-sky-200"
                 >
+                  Mapping
+                </span>
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >Accessibility</span
+                  class="inline-block bg-lime-50 text-lime-700 rounded-md px-2.5 py-1 text-xs font-medium border border-lime-200"
                 >
+                  Accessibility
+                </span>
               </div>
             </div>
           </div>
 
           <!-- Project 6 -->
           <div
-            class="project-item bg-white rounded-xl shadow-lg overflow-hidden"
+            class="project-item bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
           >
-            <div class="h-48 bg-indigo-500 flex items-center justify-center">
-              <i class="fas fa-qrcode text-white text-5xl"></i>
+            <div
+              class="h-32 bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center relative overflow-hidden"
+            >
+              <i
+                class="fas fa-qrcode text-white text-3xl group-hover:scale-110 transition-transform duration-300"
+              ></i>
+              <div
+                class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+              ></div>
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-3 text-gray-800">
+            <div class="p-5">
+              <h3
+                class="text-lg font-semibold mb-2 text-gray-800 group-hover:text-indigo-600 transition-colors duration-300"
+              >
                 Plus Code Generation
               </h3>
-              <p class="text-gray-600 mb-4">
+              <p class="text-gray-600 text-sm mb-3 leading-relaxed">
                 Automated QR code generation for 15,000+ flats, enhancing
                 digital addressing accuracy in Solapur Ray Project.
               </p>
-              <div class="flex flex-wrap gap-2 mb-4">
+              <div class="flex flex-wrap gap-1.5">
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >Python</span
+                  class="inline-block bg-amber-50 text-amber-700 rounded-md px-2.5 py-1 text-xs font-medium border border-amber-200"
                 >
+                  Python
+                </span>
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >QR Codes</span
+                  class="inline-block bg-rose-50 text-rose-700 rounded-md px-2.5 py-1 text-xs font-medium border border-rose-200"
                 >
+                  QR Codes
+                </span>
                 <span
-                  class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700"
-                  >Plus Codes</span
+                  class="inline-block bg-slate-50 text-slate-700 rounded-md px-2.5 py-1 text-xs font-medium border border-slate-200"
                 >
+                  Plus Codes
+                </span>
               </div>
             </div>
           </div>
@@ -824,6 +1155,7 @@
       </div>
     </section>
     <!-- Uplifting Message with Image -->
+    <!-- Uplifting Message with Image -->
     <section class="bg-yellow-50 py-12 mt-10">
       <div
         class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10 max-w-5xl"
@@ -833,9 +1165,7 @@
           <div
             class="bg-yellow-100 text-yellow-900 p-6 rounded-lg shadow-md text-center md:text-left"
           >
-            <p             id="confettiTrigger"
-
-            class="text-lg font-medium">
+            <p id="confettiTrigger" class="text-lg font-medium">
               Hey you! 🌟 You made it all the way down here — and that says a
               lot. Whether you're here out of curiosity or connection, know that
               I appreciate you.
@@ -849,7 +1179,6 @@
         <!-- Your Image -->
         <div class="md:w-1/3 flex justify-center">
           <img
-            
             src="/pic.png"
             alt="Rohit Kalpande"
             class="rounded-full w-40 h-40 object-cover border-4 border-yellow-300 shadow-lg cursor-pointer transition-transform hover:scale-105"
@@ -859,41 +1188,42 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-800">Contact Me</h2>
+    <section id="contact" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl font-bold text-gray-800">Let's Connect</h2>
         </div>
 
-        <div class="flex flex-col md:flex-row gap-10">
+        <div class="flex flex-col md:flex-row gap-8">
           <!-- Left Container: Contact Info -->
           <div class="md:w-1/2">
-            <h3 class="text-xl font-semibold mb-6 text-blue-600">
+            <h3 class="text-lg font-semibold mb-5 text-blue-600">
               Get In Touch
             </h3>
-            <ul class="space-y-4 text-gray-700">
+
+            <ul class="space-y-3 text-gray-700 mb-5">
               <li class="flex items-center gap-3">
-                <i class="fas fa-map-marker-alt text-blue-500 text-xl"></i>
-                <span>Pune, Maharashtra, India</span>
+                <i class="fas fa-map-marker-alt text-blue-500 text-lg"></i>
+                <span class="text-sm">Pune, Maharashtra, India</span>
               </li>
               <li class="flex items-center gap-3">
-                <i class="fas fa-envelope text-blue-500 text-xl"></i>
-                <span>developsrohit@gmail.com</span>
+                <i class="fas fa-envelope text-blue-500 text-lg"></i>
+                <span class="text-sm">developsrohit@gmail.com</span>
               </li>
             </ul>
 
-            <div class="mt-6 flex gap-4">
+            <div class="flex gap-4">
               <a
                 href="https://linkedin.com/in/rohit-kalpande"
                 target="_blank"
-                class="text-blue-600 text-2xl hover:text-blue-800"
+                class="text-blue-600 text-xl hover:text-blue-800 transition-colors"
               >
                 <i class="fab fa-linkedin"></i>
               </a>
               <a
                 href="https://github.com/rohit-kalpande"
                 target="_blank"
-                class="text-gray-800 text-2xl hover:text-black"
+                class="text-gray-700 text-xl hover:text-black transition-colors"
               >
                 <i class="fab fa-github"></i>
               </a>
@@ -902,14 +1232,19 @@
 
           <!-- Right Container: Geek Chuckle -->
           <div class="md:w-1/2">
-            <div class="p-4 bg-white rounded-lg shadow-md">
-              <h4 class="text-lg font-medium text-gray-800 mb-2">
-                Geek Chuckle of the Moment
+            <div
+              class="p-4 bg-white rounded-lg shadow-sm border border-gray-100"
+            >
+              <h4 class="text-base font-medium text-gray-800 mb-3">
+                Daily Geek Chuckle
               </h4>
-              <p id="quote" class="text-gray-600 italic text-sm sm:text-base">
+              <p
+                id="quote"
+                class="text-gray-600 italic text-sm leading-relaxed"
+              >
                 "Fetching a geeky joke for you..."
               </p>
-              <p id="author" class="text-gray-500 text-sm mt-1">— Geek Jokes</p>
+              <p id="author" class="text-gray-500 text-xs mt-2">— Geek Jokes</p>
             </div>
           </div>
         </div>
